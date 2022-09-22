@@ -11,7 +11,7 @@ export default class App extends Component<Props, {}> {
 
   getDigimon = async () => {
     const { updateList } = this.props;
-    const response = await fetch("https://digimon-api.vercel.app/api/digimon");
+    const response = await fetch("http://localhost:4000/api/digimon");
     const json: Array<any> = await response.json();
     const data: Array<DigimonData> = json.map((o: any, index) => {
       return {

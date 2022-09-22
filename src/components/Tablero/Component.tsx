@@ -11,8 +11,8 @@ export default class Tablero extends Component<Props, State> {
   render() {
     return (
       <div className={styles.root}>
-        {this.props.digimonList.map((digimon) => {
-          return <Card digimon={digimon} />;
+        {this.props.digimonList.map((digimon, index) => {
+          return <Card digimon={digimon} key={index}/>;
         })}
       </div>
     );
