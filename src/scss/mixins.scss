@@ -1,0 +1,16 @@
+@mixin name-colors {
+    &[data-name='david'] {
+      color: red;
+    }
+    &[data-name='pablo'] {
+      color: blue;
+    }
+  }
+  
+  @mixin font-sizes {
+    @for $i from 0 to 101 {
+      &[data-font-size='#{$i}'] {
+        font-size: calc(1px * #{$i})
+      }
+    }
+  }
