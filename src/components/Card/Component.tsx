@@ -42,13 +42,21 @@ export default class Card extends Component<Props, State> {
   render() {
     const { digimon } = this.props;
     return (
-      <div className={styles.root}>
-        <div className={styles.level}>{this.getLevel()}</div>
-        <div className={styles.face}>
-          <img className={styles.image} src={digimon.img} alt={digimon.name} />
+      <main>
+      <div className={styles.flipcard}>
+
+        <div className={styles.root}>
+          <div className={styles.level}>{this.getLevel()}</div>
+          <div className={styles.face}>
+            <img className={styles.image} src={digimon.img} alt={digimon.name} />
+          </div>
+          <div className={styles.name}>{digimon.name}</div>
         </div>
-        <div className={styles.name}>{digimon.name}</div>
+
+        <div className={styles.trasera}>Has elegido esta carta</div>
+
       </div>
+      </main>
     );
   }
 }
