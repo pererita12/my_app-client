@@ -7,5 +7,5 @@ interface Props extends ConnectedProps<typeof connector> {
 }
 
 interface State {
-  //
+  clicked: boolean
 }

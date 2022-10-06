@@ -5,7 +5,7 @@ import { Props, State } from "./types";
 
 export default class Card extends Component<Props, State> {
   state: State = {
-    //
+    clicked: false
   };
 
   getLevel = (): LEVELS => {
@@ -39,24 +39,29 @@ export default class Card extends Component<Props, State> {
     return LEVELS.FRESH;
   };
 
+  onCarsClick = () => {
+    const {clicked } = this.state;
+    this.setState({
+      clicked: !clicked
+    })
+  };
+
   render() {
     const { digimon } = this.props;
     return (
-      <main>
-      <div className={styles.flipcard}>
-
         <div className={styles.root}>
-          <div className={styles.level}>{this.getLevel()}</div>
-          <div className={styles.face}>
-            <img className={styles.image} src={digimon.img} alt={digimon.name} />
+          <div className={styles.innerCard}>
+            <div className={styles.cardfront}>
+              <div className={styles.level}>{this.getLevel()}</div>
+              <div className={styles.face}>
+              <img className={styles.image} src={digimon.img} alt={digimon.name} />
+              </div>
+              <div className={styles.name}>{digimon.name}</div>
+              </div>
+
+            <div className={styles.cardback}>Has elegido esta carta</div>
           </div>
-          <div className={styles.name}>{digimon.name}</div>
         </div>
-
-        <div className={styles.trasera}>Has elegido esta carta</div>
-
-      </div>
-      </main>
     );
   }
 }
