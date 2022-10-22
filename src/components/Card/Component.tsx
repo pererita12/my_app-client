@@ -58,8 +58,9 @@ export default class Card extends Component<Props, State> {
               </div>
               <div className={styles.name}>{digimon.name}</div>
               </div>
-
-            <div className={styles.cardback}>Has elegido esta carta</div>
+            <div className={styles.cardback}>
+              ##datos
+            </div>
           </div>
         </div>
     );

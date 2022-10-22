@@ -2,7 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 import { UpdateList } from "../actions";
 
 export interface DigimonData {
-  index: number;
+  id: number;
   name: string;
   img: string;
   level:
