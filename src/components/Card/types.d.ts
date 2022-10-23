@@ -1,11 +1,17 @@
 import { ConnectedProps } from "react-redux";
 import { connector } from ".";
 import { DigimonData } from "../../redux/reducers/digimonList";
-
-interface Props extends ConnectedProps<typeof connector> {
+export interface OwnProps {
   digimon: DigimonData;
 }
 
-interface State {
-  clicked: boolean
+export interface Props extends ConnectedProps<typeof connector>, OwnProps {
+  //
+}
+
+export interface State {
+  isSelected: boolean;
+  isStrength: boolean;
+  isMagic: boolean;
+  isSpeed: boolean;
 }

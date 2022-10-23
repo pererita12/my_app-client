@@ -14,14 +14,16 @@ export interface DigimonData {
     | "champion"
     | "mega"
     | "ultimate";
+  strength: number;
+  speed: number;
+  magic: number;
+  health: number;
 }
 
 const initialState: Array<DigimonData> = [];
 
-const values = createReducer(initialState, (builder) => {
+export default createReducer(initialState, (builder) => {
   builder.addCase(UpdateList, (state, action) => {
     return action.payload;
   });
 });
-
-export default values;
